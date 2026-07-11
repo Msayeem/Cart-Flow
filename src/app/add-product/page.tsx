@@ -15,6 +15,7 @@ interface ProductFormData {
   imageUrl: string;
   description: string;
   userId?: string; // Optional because session might take a moment to load
+sellerName?:string;
 }
 
 const AddProduct = () => {
@@ -35,6 +36,7 @@ const AddProduct = () => {
     
     // Append the authenticated user context safely
     product.userId = user?.id;
+    product.sellerName=user?.name;
 
     try {
       const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
@@ -94,34 +96,19 @@ const AddProduct = () => {
               </Select.Trigger>
               <Select.Popover>
                 <ListBox>
-                  <ListBox.Item id="Tennis" textValue="Tennis">
-                    Tennis
+                  <ListBox.Item id="Tech & Electronics" textValue="Tech & Electronics">
+                    Tech & Electronics
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
-                  <ListBox.Item id="Basketball" textValue="Basketball">
-                    Basketball
+                  <ListBox.Item id="Fabrics & Apparel" textValue="Fabrics & Apparel">
+                    Fabrics & Apparel
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
-                  <ListBox.Item id="Football" textValue="Football">
-                    Football
+                  <ListBox.Item id="Digital Tools" textValue="Digital Tools">
+                    Digital Tools
                     <ListBox.ItemIndicator />
                   </ListBox.Item>
-                  <ListBox.Item id="Badminton" textValue="Badminton">
-                    Badminton
-                    <ListBox.ItemIndicator />
-                  </ListBox.Item>
-                  <ListBox.Item id="Volleyball" textValue="Volleyball">
-                    Volleyball
-                    <ListBox.ItemIndicator />
-                  </ListBox.Item>
-                  <ListBox.Item id="Cricket" textValue="Cricket">
-                    Cricket
-                    <ListBox.ItemIndicator />
-                  </ListBox.Item>
-                  <ListBox.Item id="Swimming" textValue="Swimming">
-                    Swimming
-                    <ListBox.ItemIndicator />
-                  </ListBox.Item>
+
                 </ListBox>
               </Select.Popover>
             </Select>

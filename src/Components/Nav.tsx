@@ -106,7 +106,7 @@ const Nav = () => {
                                 onClick={() => setIsOpen(false)}
                                 className={`rounded-xl px-4 py-3 text-base font-medium transition-colors ${
                                     isActive 
-                                        ? 'bg-green-50 text-green-600' 
+                                        ? 'bg-green-50 text-orange-600' 
                                         : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                                 }`}
                             >
