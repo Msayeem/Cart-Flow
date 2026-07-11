@@ -19,7 +19,7 @@ const Nav = () => {
         { name: 'Home', href: '/' },
         { name: 'Products', href: '/products' },
         { name: 'My Cart', href: '/my-bookings' },
-        { name: 'Add Product', href: '/add-facility' },
+        { name: 'Add Product', href: '/add-product' },
         { name: 'Manage Products', href: '/manage-facility' },
     ];
 
@@ -33,7 +33,7 @@ const Nav = () => {
                     href={'/'}
                 >
                     <span>
-                        Cart-<span className="font-bold text-green-600 transition-colors duration-300 group-hover:text-green-500">Flow</span>
+                        Cart-<span className="font-bold text-orange-600 transition-colors duration-300 group-hover:text-orange-500">Flow</span>
                     </span>
                 </Link>
 
@@ -47,7 +47,7 @@ const Nav = () => {
                                 href={link.href}
                                 className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
                                     isActive 
-                                        ? 'text-green-600 bg-green-50' 
+                                        ? 'text-orange-600 bg-green-50' 
                                         : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                                 }`}
                             >
@@ -70,7 +70,7 @@ const Nav = () => {
                     ) : (
                         <Link 
                             href={'/login'}
-                            className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-green-600 hover:shadow-green-100"
+                            className="rounded-full bg-slate-900 px-5 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-orange-600 hover:shadow-green-100"
                         >
                             Login
                         </Link>
