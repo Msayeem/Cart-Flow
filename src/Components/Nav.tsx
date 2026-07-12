@@ -18,7 +18,7 @@ const Nav = () => {
     const navLinks = [
         { name: 'Home', href: '/' },
         { name: 'Products', href: '/products' },
-        { name: 'My Cart', href: '/my-bookings' },
+        { name: 'My Cart', href: '/cart' },
         { name: 'Add Product', href: '/add-product' },
         { name: 'Manage Products', href: '/manage-facility' },
     ];

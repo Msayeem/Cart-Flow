@@ -12,6 +12,7 @@ interface AllProductsProps {
     productType: string;
     imageUrl: string;
     price: number | string;
+    description:string;
   };
 }
 
@@ -43,6 +44,11 @@ const AllProducts = ({ product }: AllProductsProps) => {
                             <h2 className="line-clamp-1 text-xl font-bold text-slate-900 transition-colors group-hover:text-orange-600">
                                 {product.productName}
                             </h2> 
+
+                            <p className="text-xs text-slate-500 leading-relaxed mt-1">
+                                {product.description}
+                                </p>
+
 
                             {/* Clean Pricing Layout Block */}
                             <div className="mt-4 flex items-center justify-between border-t border-slate-50 pt-4 text-sm">
