@@ -20,7 +20,7 @@ const Nav = () => {
         { name: 'Products', href: '/products' },
         { name: 'My Cart', href: '/cart' },
         { name: 'Add Product', href: '/add-product' },
-        { name: 'Manage Products', href: '/manage-facility' },
+        { name: 'Manage Products', href: '/manage' },
     ];
 
     return (
