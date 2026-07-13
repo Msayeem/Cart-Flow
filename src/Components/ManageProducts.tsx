@@ -1,5 +1,8 @@
-import { Button, Card, CloseButton } from '@heroui/react';
+"use client"
+import { AlertDialog, Button, Card, CloseButton } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import toast from 'react-hot-toast';
 
 interface AllProductsProps {
   product: {
@@ -15,11 +18,29 @@ interface AllProductsProps {
 
 const ManageProducts = ({product}: AllProductsProps) => {
 
+    const router=useRouter();
+
+    const handleDelete= async()=>{
+
+         const res=await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/products/${product._id}`, {
+        method:'DELETE',
+        headers:{
+             'content-type':'application/json',
+            
+        }
+    });
+
+    const result=await res.json();
+   toast(`${product.productName} deleted.`, {
+  icon: 'ℹ️',
+});
+    router.refresh()
+    }
 
     return (
        <div className="flex justify-center mb-5">
                  
-        <Card className="w-3xl shadow-2xl md:flex-row hover:scale-105 transition">
+        <Card className="w-3xl shadow-2xl md:flex-row hover:scale-102 transition">
            <div className="relative h-[140px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[120px] sm:w-[120px]">
              <img
                alt={product.productName}
@@ -43,7 +64,34 @@ const ManageProducts = ({product}: AllProductsProps) => {
                </div>
               <div className=''>
                  <Button  className="w-full bg-black hover:bg-orange-500 active:opacity-70 sm:w-auto mr-3.5">Edit</Button>
-               <Button  className="w-full bg-orange-600 hover:bg-orange-500 active:opacity-70 sm:w-auto">Buy Now</Button>
+                 <AlertDialog>
+      <Button variant="danger">Delete Product</Button>
+      <AlertDialog.Backdrop>
+        <AlertDialog.Container>
+          <AlertDialog.Dialog className="sm:max-w-[400px]">
+            <AlertDialog.CloseTrigger />
+            <AlertDialog.Header>
+              <AlertDialog.Icon status="danger" />
+              <AlertDialog.Heading>Delete Product permanently?</AlertDialog.Heading>
+            </AlertDialog.Header>
+            <AlertDialog.Body>
+              <p>
+                This will permanently delete <strong>{product.productName}</strong> and all of its
+                data. This action cannot be undone.
+              </p>
+            </AlertDialog.Body>
+            <AlertDialog.Footer>
+              <Button slot="close" variant="tertiary">
+                Cancel
+              </Button>
+              <Button onClick={handleDelete} slot="close" variant="danger">
+                Delete Product
+              </Button>
+            </AlertDialog.Footer>
+          </AlertDialog.Dialog>
+        </AlertDialog.Container>
+      </AlertDialog.Backdrop>
+    </AlertDialog>
               </div>
              </Card.Footer>
            </div>
