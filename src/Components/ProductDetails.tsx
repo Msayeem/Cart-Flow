@@ -14,6 +14,7 @@ interface Product {
     productType: string;
     imageUrl: string;
     price: number | string;
+    warrenty: string;
     sellerName: string;
     description:string;
     sellerEmail:string;
@@ -116,6 +117,22 @@ try {
                                 </div>
                             </div>
                         </div>
+
+
+                        <div>
+                            
+
+                            <div className="flex items-center gap-4 p-5 bg-white border border-slate-100 rounded-xl shadow-xs">
+                                
+                                <div>
+                                    <span className="text-xs font-bold text-slate-800 block uppercase tracking-wider">Warrenty</span>
+                                    <p className="font-medium text-slate-500 text-sm mt-0.5">{product.warrenty} years</p>
+
+                                </div>
+                            </div>
+                        </div>
+
+                          
 
                         {/* Informational Banner */}
                         <div className="rounded-xl border border-slate-100 bg-white p-5 flex gap-4 items-start shadow-xs">

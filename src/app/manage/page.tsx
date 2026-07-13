@@ -29,6 +29,23 @@ const session = await auth.api.getSession({
 
 
     return (
+        <div className="min-h-screen bg-slate-50/50 py-12">
+                    <div className="mx-auto w-[90%] max-w-7xl space-y-10">
+                        
+                        {/* Modernized Header Block */}
+                        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-b border-slate-100 pb-8">
+                            <div>
+                                <h1 className="text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+                                    Manage <span className="text-orange-600">Products</span>
+                                </h1>
+                                <p className="mt-2 text-sm text-slate-500">
+                                    Edit and delete the products you have created.
+                                </p>
+                            </div>
+                         
+                        </div>
+        
+            </div>
         <div>
             {
                 products.length>0 ?
@@ -36,6 +53,7 @@ products.map(product=><ManageProducts key={product._id} product={product}></Mana
   :
   <h2 className="font-medium mt-30 text-slate-500 text-center">You have not created any products yet.</h2>     
 }
+        </div>
         </div>
     );
 };

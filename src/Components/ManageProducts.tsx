@@ -1,5 +1,6 @@
 "use client"
 import { AlertDialog, Button, Card, CloseButton } from '@heroui/react';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 import toast from 'react-hot-toast';
@@ -38,9 +39,10 @@ const ManageProducts = ({product}: AllProductsProps) => {
     }
 
     return (
+        
        <div className="flex justify-center mb-5">
                  
-        <Card className="w-3xl shadow-2xl md:flex-row hover:scale-102 transition">
+        <Card className="lg:w-[70%] w-[90%] shadow-2xl md:flex-row hover:scale-102 transition">
            <div className="relative h-[140px] w-full shrink-0 overflow-hidden rounded-2xl sm:h-[120px] sm:w-[120px]">
              <img
                alt={product.productName}
@@ -62,8 +64,8 @@ const ManageProducts = ({product}: AllProductsProps) => {
                  <span className="text-sm font-medium text-foreground">Price</span>
                  <span className="text-xs text-muted">${product.price}</span>
                </div>
-              <div className=''>
-                 <Button  className="w-full bg-black hover:bg-orange-500 active:opacity-70 sm:w-auto mr-3.5">Edit</Button>
+              <div className='flex items-center gap-3.5'>
+                 <Link href={`/manage/${product._id}`}  ><Button className="w-full bg-black hover:bg-orange-500 active:opacity-70 sm:w-auto">Edit</Button></Link>
                  <AlertDialog>
       <Button variant="danger">Delete Product</Button>
       <AlertDialog.Backdrop>
@@ -98,6 +100,8 @@ const ManageProducts = ({product}: AllProductsProps) => {
          </Card>
      
              </div>
+              
+        
     );
 };
 

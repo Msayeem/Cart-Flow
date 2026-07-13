@@ -9,6 +9,7 @@ const ProductsPage = async () => {
     imageUrl: string;
     price: number | string;
     description:string;
+    warrenty:string;
   };
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/products`, {

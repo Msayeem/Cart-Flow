@@ -13,6 +13,7 @@ interface AllProductsProps {
     imageUrl: string;
     price: number | string;
     description:string;
+    warrenty:string;
   };
 }
 
