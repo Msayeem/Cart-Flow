@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "react-hot-toast";
 import Nav from "@/Components/Nav";
+import Footer from "@/Components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,16 +30,26 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      {/* 
+        CHANGED: Changed 'min-h-full' to 'min-h-screen' to accurately 
+        measure the device viewport height. Keep flex and flex-col.
+      */}
+      <body className="min-h-screen flex flex-col">
 
         <Nav></Nav>
         
-        <main>
+        {/* 
+          CHANGED: Added 'flex-1' so this main container grows 
+          to push the footer down on short pages.
+        */}
+        <main className="flex-1">
           {children}
           <Toaster></Toaster>
         </main>
         
-        </body>
+        <Footer></Footer>
+        
+      </body>
     </html>
   );
 }

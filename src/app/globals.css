@@ -1,2 +1,25 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
+
+
+@theme {
+  /* 
+    We apply the transition effect.
+    On larger screens, we calculate the movement strictly bounds-checked to 
+    the max container size of 1280px (max-w-7xl) to prevent empty margin gaps.
+  */
+  --animate-alternate-scroll: alternate-scroll 20s ease-in-out infinite alternate;
+
+  @keyframes alternate-scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      /* 
+        Scrolls up to the boundary of either the viewport width (on mobile)
+        or the max container width (1280px) on large screens.
+      */
+      transform: translateX(calc(-100% + min(1280px, 100vw)));
+    }
+  }
+}

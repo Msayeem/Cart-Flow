@@ -32,8 +32,8 @@ const Nav = () => {
                     className="group flex items-center gap-2 text-2xl font-medium tracking-tight text-slate-900" 
                     href={'/'}
                 >
-                    <span>
-                        Cart-<span className="font-bold text-orange-600 transition-colors duration-300 group-hover:text-orange-500">Flow</span>
+                    <span className="bg-gradient-to-r from-orange-600 via-orange-500 to-amber-500 bg-clip-text font-bold text-transparent">
+                        Cart-Flow
                     </span>
                 </Link>
 
@@ -45,7 +45,7 @@ const Nav = () => {
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                                className={`relative rounded-full px-3 py-2 text-sm font-medium transition-all duration-300 ${
                                     isActive 
                                         ? 'text-orange-600 bg-green-50' 
                                         : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
