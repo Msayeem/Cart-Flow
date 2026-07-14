@@ -21,6 +21,7 @@ const Nav = () => {
         { name: 'My Cart', href: '/cart' },
         { name: 'Add Product', href: '/add-product' },
         { name: 'Manage Products', href: '/manage' },
+        { name: 'About', href: '/about' },
     ];
 
     return (
@@ -54,7 +55,7 @@ const Nav = () => {
                                 {link.name}
                                 {/* Micro-interaction underline effect */}
                                 {!isActive && (
-                                    <span className="absolute bottom-1 left-4 h-[2px] w-0 bg-green-500 transition-all duration-300 group-hover:w-[calc(100%-32px)]" />
+                                    <span className="absolute bottom-1 left-4 h-[2px] w-0 bg-orange-500 transition-all duration-300 group-hover:w-[calc(100%-32px)]" />
                                 )}
                             </Link>
                         );
@@ -118,7 +119,7 @@ const Nav = () => {
                         <Link 
                             href={'/login'}
                             onClick={() => setIsOpen(false)}
-                            className="mt-2 text-center rounded-xl bg-slate-900 px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-green-600"
+                            className="mt-2 text-center rounded-xl bg-slate-900 px-4 py-3 text-base font-semibold text-white transition-colors hover:bg-orange-600"
                         >
                             Login
                         </Link>

@@ -79,11 +79,9 @@ export default function Footer() {
 
       {/* Lower Copyright Ribbon */}
       <div className="border-t border-neutral-100 dark:border-neutral-900/60 bg-neutral-50/50 dark:bg-neutral-950/40">
-        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="max-w-7xl mx-auto px-6 py-6 text-center text-xs">
           <p>© {currentYear} Cart-Flow. All rights reserved.</p>
-          <p className="flex items-center gap-1">
-            Engineered with <Heart className="h-3 w-3 text-orange-600 fill-orange-600" /> using Next.js & Tailwind v4
-          </p>
+          
         </div>
       </div>
       
