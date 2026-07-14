@@ -20,7 +20,7 @@ interface AllProductsProps {
 // ✅ Applied the interface type to the component arguments
 const AllProducts = ({ product }: AllProductsProps) => {
     return (
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          <div >
                     <div
                         className={`group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-slate-100 transition-all duration-500 ease-out transform
                             hover:-translate-y-1.5 hover:shadow-xl hover:shadow-green-900/5 hover:ring-orange-200

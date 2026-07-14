@@ -10,20 +10,25 @@ const UserSetting = () => {
   const user = session?.user;
   const router = useRouter();
 
+  const handleSignout=()=>{
+    authClient.signOut(); 
+    router.refresh();
+  }
+
   return (
-    <div>
-      <Dropdown>
+    <div className="shadow-orange-200 shadow-lg">
+      <Dropdown className="">
         <Dropdown.Trigger className="rounded-full">
-          <Avatar>
+          <Avatar className="rounded-full">
             {/* ✅ Fixed: fall back to undefined if image is null */}
-            <Avatar.Image alt={user?.name} src={user?.image || undefined} />
+            <Avatar.Image className="rounded-full" alt={user?.name} src={user?.image || undefined} />
             <Avatar.Fallback>{user?.name?.charAt(0)}</Avatar.Fallback>
           </Avatar>
         </Dropdown.Trigger>
         <Dropdown.Popover>
           <div className="px-3 pt-3 pb-1">
             <div className="flex items-center gap-2">
-              <Avatar size="sm">
+              <Avatar size="sm" className="">
                 {/* ✅ Fixed: fall back to undefined if image is null */}
                 <Avatar.Image alt={user?.name} src={user?.image || undefined} />
                 <Avatar.Fallback>{user?.name?.charAt(0) || "U"}</Avatar.Fallback>
@@ -37,25 +42,25 @@ const UserSetting = () => {
           <Dropdown.Menu>
             <Dropdown.Item
               id="dashboard"
-              textValue="My Bookings"
-              onClick={() => router.push('/my-bookings')}
+              textValue="My Cart"
+              onClick={() => router.push('/cart')}
             >
-              <Label>My Bookings</Label>
+              <Label>My Cart</Label>
             </Dropdown.Item>
             <Dropdown.Item
               id="profile"
-              textValue="Add Facility"
-              onClick={() => router.push('/add-facility')}
+              textValue="Add Product"
+              onClick={() => router.push('/add-product')}
             >
-              Add Facility
+              Add Product
             </Dropdown.Item>
             <Dropdown.Item
               id="settings"
-              textValue="Manage Facilities"
-              onClick={() => router.push('/manage-facility')}
+              textValue="Manage Product"
+              onClick={() => router.push('/manage')}
             >
               <div className="flex w-full items-center justify-between gap-2">
-                Manage Facilities
+                Manage Products
                 <Gear className="size-3.5 text-slate-400" />
               </div>
             </Dropdown.Item>
@@ -63,7 +68,7 @@ const UserSetting = () => {
               id="logout"
               textValue="Logout"
               variant="danger"
-              onClick={() => authClient.signOut()}
+              onClick={handleSignout}
             >
               <div className="flex w-full items-center justify-between gap-2">
                 <Label>Log Out</Label>
