@@ -148,7 +148,7 @@ const SignUpPage = () => {
             <Button
               type="submit"
               isDisabled={isPending}
-              className="w-full h-11 bg-green-600 text-white font-medium rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm disabled:opacity-60"
+              className="w-full h-11 bg-orange-600 text-white font-medium rounded-xl flex items-center justify-center gap-2 transition-colors shadow-sm disabled:opacity-60"
             >
               <Check className="w-4 h-4" />
               {isPending ? "Signing up..." : "Sign Up"}
@@ -172,7 +172,7 @@ const SignUpPage = () => {
             href="/login"
             className="font-semibold text-slate-900 hover:text-blue-600 hover:underline transition-colors"
           >
-            Sign in here
+            Login here
           </Link>
         </p>
       </div>

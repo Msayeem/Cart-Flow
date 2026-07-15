@@ -22,7 +22,7 @@ const ValueCard: React.FC<ValueCardProps> = ({ icon, title, description }) => (
 
 export default function AboutPage() {
   return (
-    <div className="w-full bg-white dark:bg-neutral-950 py-16 md:py-24">
+    <div className="animate-fade-up w-full bg-white dark:bg-neutral-950 py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Section 1: Hero Intro */}

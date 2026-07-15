@@ -12,7 +12,7 @@ const UserSetting = () => {
 
   const handleSignout=()=>{
     authClient.signOut(); 
-    router.refresh();
+    router.push('/login');
   }
 
   return (

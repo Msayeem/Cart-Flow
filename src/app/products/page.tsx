@@ -31,7 +31,7 @@ const ProductsPage = async ({ searchParams }: ProductsPageProps) => {
   const products: Product[] = await res.json();
 
   return (
-    <div className="min-h-screen bg-slate-50/50 py-12">
+    <div className="animate-fade-up min-h-screen bg-slate-50/50 py-12">
       <div className="mx-auto w-[90%] max-w-7xl space-y-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6 border-b border-slate-100 pb-8">
           <div>

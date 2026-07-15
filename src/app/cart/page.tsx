@@ -36,7 +36,7 @@ const session = await auth.api.getSession({
 
 
     return (
-        <div>
+        <div className="animate-fade-up">
 
              <h1 className="text-3xl mb-5 mt-5 ml-8 font-extrabold tracking-tight text-slate-900 sm:text-4xl">
                             My <span className="text-orange-600">Cart</span>

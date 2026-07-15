@@ -29,7 +29,7 @@ const session = await auth.api.getSession({
 
 
     return (
-        <div className="min-h-screen bg-slate-50/50 py-12">
+        <div className="animate-fade-up min-h-screen bg-slate-50/50 py-12">
                     <div className="mx-auto w-[90%] max-w-7xl space-y-10">
                         
                         {/* Modernized Header Block */}

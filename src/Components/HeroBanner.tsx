@@ -31,7 +31,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, title, description, onC
 
 export default function HeroBanner() {
   return (
-    <section className="relative overflow-hidden bg-neutral-50 py-20 dark:bg-neutral-950 lg:py-32">
+    <section className="animate-fade-up relative overflow-hidden bg-neutral-50 py-20 dark:bg-neutral-950 lg:py-32">
       {/* Decorative Background Elements */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(45rem_50rem_at_top,theme(colors.orange.100),white)] opacity-40 dark:bg-[radial-gradient(45rem_50rem_at_top,theme(colors.orange.950),black)] dark:opacity-30" />
       <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white dark:bg-neutral-950 shadow-xl shadow-orange-600/5 ring-1 ring-neutral-50 dark:ring-neutral-900/10" />
