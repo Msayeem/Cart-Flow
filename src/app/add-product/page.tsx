@@ -70,7 +70,7 @@ const AddProduct = () => {
   };
 
   return (
-    <div>
+    <div className='animate-fade-up'>
       <h1 className="text-3xl font-extrabold tracking-tight ml-10 mt-10 text-slate-900 sm:text-4xl">
         Add <span className="text-orange-600">Product</span>
       </h1>
