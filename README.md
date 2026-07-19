@@ -31,8 +31,7 @@ Cart-Flow is a modern full-stack marketplace application where users can discove
 - TypeScript
 - Tailwind CSS
 - Hero UI
-- Axios
-- React Hook Form
+- BetterAuth
 - React Hot Toast
 - Vercel
 
